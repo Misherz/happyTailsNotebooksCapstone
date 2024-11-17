@@ -1,0 +1,24 @@
+.navBar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #6F4C5B;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navButton{
+    width: 60%;
+    background-color: #9E7777;
+}
+
+.navButton:hover{
+    background-color: #DEBA9D;
+    color: #61424f;
+}
