@@ -1,0 +1,44 @@
+
+
+.foxImg{
+    z-index: 1;
+    opacity: 100%;
+    width: 50%;
+    height: 70%;
+    margin: 0;
+    border-radius: 2em;
+    padding: 2em;
+    margin: 3em;
+    margin-right: 2em;
+}
+
+.midAbout {
+    display: flex;
+    flex-direction: row;
+    color:  #4d343e;
+    justify-content: center;
+    align-content: space-evenly;
+    align-items: flex-end;
+    z-index: 1;
+    padding: 2em 4em 2em 4em;
+
+}
+
+.aboutTxt{
+    z-index: 1;
+    max-width: 50%;
+    padding: 0.5em;
+    margin: 0;
+    background-color: #CBD2A4;
+    border-radius: 2em;
+    
+}
+
+.aboutTitle{
+    padding: 0 1.5em 0 1.5em;
+}
+
+.aboutP {
+    padding: 0 1.5em 0 1.5em;
+
+}

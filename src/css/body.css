@@ -1,0 +1,18 @@
+body {
+    position: relative;
+    background-color: hsl(36, 65%, 91%);
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 102%;
+    height: 100%;
+    background-image: url(./imgs/gridPaper.png);
+    object-fit: cover;
+    background-position: center;
+    background-repeat: repeat;
+    opacity: 0.3;    
+  }
