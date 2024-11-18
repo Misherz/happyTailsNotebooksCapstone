@@ -1,4 +1,25 @@
 .homeHeader{
+    z-index: 1;
     color:  #4d343e;
     font-size: 3em;
+    position: relative;
+    background-color: rgb(233, 188, 130);
+    width: 120%;
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+
+.foxImg{
+    z-index: 1;
+    position: relative;
+    opacity: 1;
+    width: 50%;
+    height: 70%;
+    margin: 0;
+    border-radius: 2em;
+    padding: 2em;
+    margin: 3em;
+    margin-right: 2em;
 }
