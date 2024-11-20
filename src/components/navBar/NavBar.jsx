@@ -15,7 +15,7 @@ export default function NavBar() {
             </Link>
             <br />
             <Link to="/about">
-                <button type='button' className='navButton' onClick={() => navigateBtns('/about')}>About</button>
+                <button type='button' className='navButton'>About</button>
             </Link>
             <br />
             <Link to="/contact">
