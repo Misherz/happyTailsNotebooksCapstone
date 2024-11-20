@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import AboutPage from './pages/homePage/AboutPage'
 import ContactPage from './pages/homePage/ContactPage'
 import LoginPage from './pages/homePage/Login'
+import Dashboard from './loggedIn/Dashboard'
 
 //cannot put jsx components in Router
 function App() {
@@ -19,7 +20,8 @@ function App() {
             <Route path="/" element={<HomePage />}/>
             <Route path="/about" element={<AboutPage />}/>
             <Route path="/contact" element={<ContactPage />}/>
-            <Route path="/Login" element={<LoginPage />}/>
+            <Route path="/login" element={<LoginPage />}/>
+            <Route path="/dashboard" element={<Dashboard />}/>
         </Routes>
     </>
   )
