@@ -36,19 +36,21 @@ export default function Dashboard() {
             <BackgroundImg />
             <NavBar />
             <div className='midDashboard'>
-                <h1>Photo of the Day</h1>
-                {dailyPhotos ? (
-                    <div className='photoBlock'>
-                        <img
-                            src={dailyPhotos.download_url}
-                            alt={`Image of the day by ${dailyPhotos.author}`}
-                            className='imgDaily'
-                        />
-                        <p>{dailyPhotos.author}</p>
-                    </div>
-                ) : (
-                    <p>Loading...</p> 
-                )}
+                <div className='apis'>
+                    <h1 className='txt'>Photo of the Day</h1>
+                    {dailyPhotos ? (
+                        <div className='photoBlock'>
+                            <img
+                                src={dailyPhotos.download_url}
+                                alt={`Image of the day by ${dailyPhotos.author}`}
+                                className='imgDaily'
+                            />
+                            <p className='txt'>{`Author: ${dailyPhotos.author}`}</p>
+                        </div>
+                    ) : (
+                        <p>Loading...</p> 
+                    )}
+                </div>
             </div>
             <div className='dashboardBtns'>
                 <button type='button' className='dashboardBtn'>JOURNAL</button>

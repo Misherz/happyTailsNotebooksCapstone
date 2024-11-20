@@ -1,7 +1,7 @@
 footer {
     display: inline-block;
     text-align: center;
-    background-color: rgb(152, 123, 123);
+    background-color: rgba(152, 123, 123, 0.633);
     position: fixed; 
     width: 100%;
     padding: 0;
