@@ -1,7 +1,7 @@
 .imgDaily {
     width: 15%;
     z-index: 1;
-    top: 2em;
+    top: 0;
     border-radius: 20em;
     border: groove 0.5em #567965;
 }
@@ -14,4 +14,16 @@
 
 }
 
+.dashboardBtn{
+    margin: 2em;
+    padding: 1em;
+    background-color: rgb(139, 107, 142);
+    width: 12em;
+    height: 6em;
+    overflow: hidden;
+    bottom: 10em;
+}
 
+.dashboardBtn:hover{
+    background-color: #567965;
+}

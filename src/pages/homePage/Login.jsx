@@ -1,6 +1,7 @@
 import '../../css/loginPg.css'
 import NavBar from '../../components/navBar/NavBar'
 import BackgroundImg from './BackgroundImg'
+import Footer from '../../components/footer/Footer'
 
 export default function LoginPage() {
     return (
@@ -34,6 +35,7 @@ export default function LoginPage() {
                      </div>
                 <img src="/imgs/FoxLogo.png" alt="Image of Happy Tails Notebooks Fox mascot" className="foxImg" />
             </div>
+            <Footer />
         </div>
     )
 }

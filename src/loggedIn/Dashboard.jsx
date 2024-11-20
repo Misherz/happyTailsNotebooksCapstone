@@ -6,7 +6,7 @@ import BackgroundImg from '../pages/homePage/BackgroundImg'
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { getPhotoData } from '../apis/photosData.mjs';
-
+import Footer from '../components/footer/Footer';
 
 export default function Dashboard() {
     const [dailyPhotos, SetDailyPhotos] = useState(null);
@@ -19,7 +19,6 @@ export default function Dashboard() {
             const randomPhoto = photosData[todaysDate % photosData.length];
 
             SetDailyPhotos(randomPhoto)
-            console.log(photosData)
 
         } catch (err) {
             console.error("Cannot get article", err)
@@ -52,12 +51,12 @@ export default function Dashboard() {
                 )}
             </div>
             <div className='dashboardBtns'>
-                <button type='button'>JOURNAL</button>
-                <button type='button'>HABIT TRACKER</button>
-                <button type='button'>EVENTS</button>
-                <button type='button'>COMMUNITY</button>
+                <button type='button' className='dashboardBtn'>JOURNAL</button>
+                <button type='button' className='dashboardBtn'>HABIT TRACKER</button><br />
+                <button type='button' className='dashboardBtn'>EVENTS</button>
+                <button type='button' className='dashboardBtn'>COMMUNITY</button>
             </div>
-
+            <Footer />
         </div>
     )
 }

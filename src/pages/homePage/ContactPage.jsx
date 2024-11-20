@@ -1,6 +1,7 @@
 import '../../css/contactPg.css'
 import NavBar from '../../components/navBar/NavBar'
 import BackgroundImg from './BackgroundImg'
+import Footer from '../../components/footer/Footer'
 
 export default function ContactPage() {
     return (
@@ -24,6 +25,7 @@ export default function ContactPage() {
                 </div>
                 <img src="/imgs/FoxLogo.png" alt="Image of Happy Tails Notebooks Fox mascot" className="foxImg" />
             </div>
+            <Footer />
         </div>
     )
 }

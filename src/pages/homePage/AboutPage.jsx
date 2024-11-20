@@ -1,6 +1,7 @@
 import '../../css/aboutPg.css'
 import NavBar from '../../components/navBar/NavBar'
 import BackgroundImg from './BackgroundImg'
+import Footer from '../../components/footer/Footer'
 
 export default function AboutPage() {
     return (
@@ -29,6 +30,7 @@ export default function AboutPage() {
                 </div>
                 <img src="/imgs/FoxLogo.png" alt="Image of Happy Tails Notebooks Fox mascot" className="foxImg" />
             </div>
+            <Footer />
         </div>
     )
 }
