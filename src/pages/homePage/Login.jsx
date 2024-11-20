@@ -10,20 +10,26 @@ export default function LoginPage() {
             <div className='midLogin'>
                 <div className='Login'>
                     <div className='loginBox'>
-                        <h1 className='contactTitle'>Login</h1>
+                        <h1 className='bxTitle'>Login</h1>
                         <input type='text' className='input' placeholder='Username'></input
                         ><br />
                         <input type='text' className='input' placeholder='Password'></input> 
+                        <br />
+                        <button className="submitBtn" type='button'>Submit</button>
                         <br />
                      </div>              
                 </div>
                 <div className='signUp'>
                     <div className='signUpBox'>
-                        <h1 className='contactTitle'>Sign Up</h1>
+                        <h1 className='bxTitle'>Sign Up</h1>
                         <input type='text' className='input' placeholder='First Name'></input>
+                        <input type='text' className='input' placeholder='Last Name'></input>
                         <input type='Last Name' className='input' placeholder='Email'></input>
                         <input type='text' className='input' placeholder='Username'></input>
                         <input type='text' className='input' placeholder='Password'></input>
+                        <br />
+                        <button className="submitBtn" type='button'>Submit</button>
+
                 </div>
                      </div>
                 <img src="/imgs/FoxLogo.png" alt="Image of Happy Tails Notebooks Fox mascot" className="foxImg" />
