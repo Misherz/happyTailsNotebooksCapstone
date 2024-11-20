@@ -1,0 +1,13 @@
+footer {
+    display: inline-block;
+    text-align: center;
+    background-color: rgb(152, 123, 123);
+    position: fixed; 
+    width: 100%;
+    padding: 0;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    z-index: -1;
+
+  }

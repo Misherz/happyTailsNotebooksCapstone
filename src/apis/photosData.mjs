@@ -1,11 +1,12 @@
-apiUrl = 'https://picsum.photos/v2/list'
+import axios from "axios";
 
 export async function getPhotoData() {
-    
-    try {
-        const response = await axios.get(`${url}`)
+    const apiUrl = 'https://picsum.photos/v2/list'
 
-        return (response.data)
+    try {
+        const response = await axios.get(`${apiUrl}`)
+
+        return response.data;
         
     } catch (err) {
         console.error("Fetching Error:", err);

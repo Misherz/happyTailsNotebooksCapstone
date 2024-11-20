@@ -8,10 +8,12 @@ import AboutPage from './pages/homePage/AboutPage'
 import ContactPage from './pages/homePage/ContactPage'
 import LoginPage from './pages/homePage/Login'
 import Dashboard from './loggedIn/Dashboard'
+import Footer from './components/footer/Footer'
 
+import { getPhotoData } from './apis/photosData.mjs'
 //cannot put jsx components in Router
 function App() {
-
+  console.log(getPhotoData())
 
   return (
     <>
@@ -23,6 +25,7 @@ function App() {
             <Route path="/login" element={<LoginPage />}/>
             <Route path="/dashboard" element={<Dashboard />}/>
         </Routes>
+        <Footer />
     </>
   )
 }
