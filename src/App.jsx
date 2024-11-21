@@ -9,6 +9,7 @@ import ContactPage from './pages/homePage/ContactPage'
 import LoginPage from './pages/homePage/Login'
 import Dashboard from './loggedIn/Dashboard'
 import Footer from './components/footer/Footer'
+import Journal from './loggedIn/Journal'
 
 import { getPhotoData } from './apis/photosData.mjs'
 //cannot put jsx components in Router
@@ -23,6 +24,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />}/>
             <Route path="/login" element={<LoginPage />}/>
             <Route path="/dashboard" element={<Dashboard />}/>
+            <Route path="/journal" element={<Journal />}/>
         </Routes>
         <Footer />
     </>
