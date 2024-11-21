@@ -13,7 +13,6 @@ import Footer from './components/footer/Footer'
 import { getPhotoData } from './apis/photosData.mjs'
 //cannot put jsx components in Router
 function App() {
-  console.log(getPhotoData())
 
   return (
     <>

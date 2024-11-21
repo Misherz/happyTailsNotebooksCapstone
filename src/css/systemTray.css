@@ -1,0 +1,17 @@
+.sysTray{
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    position: fixed; 
+    top: 0;
+    right: 0;
+    height: 50vh;
+    width: 20vh;
+    color: rgb(251, 250, 192);
+    background-color: #4f7980;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1;
+}
