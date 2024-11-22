@@ -2,6 +2,7 @@ import '../../css/loginPg.css'
 import NavBar from '../../components/navBar/NavBar'
 import BackgroundImg from './BackgroundImg'
 import Footer from '../../components/footer/Footer'
+import '../../../public/imgs/pencil.png'
 
 export default function LoginPage() {
     return (
@@ -18,6 +19,7 @@ export default function LoginPage() {
                         <br />
                         <button className="submitBtn" type='button'>Submit</button>
                         <br />
+                        <img className="pencil" src='../../../public/imgs/pencil.png' alt='pencil icon' />
                      </div>              
                 </div>
                 <div className='signUp'>
@@ -30,7 +32,6 @@ export default function LoginPage() {
                         <input type='text' className='input' placeholder='Password'></input>
                         <br />
                         <button className="submitBtn" type='button'>Submit</button>
-
                 </div>
                      </div>
                 <img src="/imgs/FoxLogo.png" alt="Image of Happy Tails Notebooks Fox mascot" className="foxImg" />
