@@ -15,3 +15,10 @@
     box-sizing: border-box;
     z-index: 1;
 }
+
+.bookmarkHole{
+    color: antiquewhite;
+    text-shadow: 2px;
+    top: 0;
+    margin: 0;
+}

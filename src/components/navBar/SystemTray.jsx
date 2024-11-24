@@ -46,7 +46,8 @@ export default function SystemTray() {
 
     return (
         <div className='sysTray'>
-            <h1 className='headerDate'><CurrentDate /></h1>
+            <h2 className='bookmarkHole'>●</h2>
+            <h2 className='headerDate'><CurrentDate /></h2>
             <h4>Weather: </h4> 
            {weather && (
                 <div className='geoData'>

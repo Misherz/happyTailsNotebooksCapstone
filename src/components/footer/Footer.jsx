@@ -8,7 +8,7 @@ export default function Footer(){
     return(
         <div className="footerPg">
             <footer>
-                <p>Copyright @ {year}</p>
+                <p>Copyright © {year}</p>
             </footer>
         </div>
     )
