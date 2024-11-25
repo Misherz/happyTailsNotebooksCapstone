@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getEntries, createEntry, updateEntry as updateEntryAPI, deleteEntry } from '../../utilities/controller.mjs';
 
 export default function MyEntries() {
     const [formData, setFormData] = useState({
@@ -10,9 +11,19 @@ export default function MyEntries() {
     const [entries, setEntries] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
     const [entriesPerPage] = useState(3);
-    const [showEntries, setShowEntries] = useState(false); 
+    const [showEntries, setShowEntries] = useState(false);
+    const [editingEntryId, setEditingEntryId] = useState(null);
 
-    //Getting Values
+    useEffect(() => {
+        if (showEntries) {
+            getEntries().then(response => {
+                console.log(response);
+                setEntries(response);
+            });
+        }
+    }, [showEntries]);
+
+    // Getting form input values
     function handleChange(e) {
         const { name, value } = e.target;
         setFormData(prevData => ({
@@ -21,11 +32,11 @@ export default function MyEntries() {
         }));
     }
 
-    //adding entries
+    // Adding new entry
     function addEntry(e) {
-        e.preventDefault(); 
-        console.log('Submitting entry:', formData); 
-
+        e.preventDefault();
+        console.log('Submitting entry:', formData);
+    
         if (formData.entry) {
             const newEntry = {
                 mood: formData.mood || "",
@@ -33,39 +44,83 @@ export default function MyEntries() {
                 entry: formData.entry,
                 dateSubmitted: Date.now(),
             };
+    
+            createEntry(newEntry).then(createdEntry => {
+                setEntries(prevEntries => [
+                    { ...createdEntry, id: Date.now() },
+                    ...prevEntries,
+                ]);
+    
+                setFormData({
+                    mood: '',
+                    subject: '',
+                    entry: '',
+                });
+    
+                alert("Entry added!");
+            }).catch(err => {
+                console.error("Failed to add entry:", err);
+            });
+        } else {
+            alert("Please fill out your journal entry. A minimum of an entry is required.");
+        }
+    }
 
-            setEntries(prevEntries => [
-                { ...newEntry, id: Date.now() },
-                ...prevEntries,
-            ]);
+    // Edit an entry
+    function editEntry(entry) {
+        setFormData({
+            mood: entry.mood,
+            subject: entry.subject,
+            entry: entry.entry,
+        });
+        setEditingEntryId(entry.id);
+    }
 
+    // Update an entry
+    function updateEntry(e) {
+        e.preventDefault();
+        
+        const updatedEntry = {
+            ...formData,
+            dateSubmitted: Date.now(),
+        };
+
+        // Call the backend API to update the entry
+        updateEntryAPI(editingEntryId, updatedEntry).then(() => {
+            // After successful backend update, update local state
+            setEntries(prevEntries =>
+                prevEntries.map(entry =>
+                    entry.id === editingEntryId ? { ...entry, ...updatedEntry } : entry
+                )
+            );
+
+            // Reset the form and stop editing
+            setEditingEntryId(null);
             setFormData({
                 mood: '',
                 subject: '',
                 entry: '',
             });
 
-            alert("Submitted! Happy Journaling!"); 
-        } else {
-            alert("Please fill out your journal entry. A minimum of an entry is required.");
-        }
+            alert("Entry updated!");
+        }).catch(err => {
+            console.error("Failed to update entry:", err);
+        });
     }
 
-    //next button
+    // Pagination
     function nextPage() {
         if ((currentPage + 1) * entriesPerPage < entries.length) {
             setCurrentPage(currentPage + 1);
         }
     }
 
-    //previous button
     function prevPage() {
         if (currentPage > 0) {
             setCurrentPage(currentPage - 1);
         }
     }
 
-   
     const sortedEntries = [...entries].sort((a, b) => b.dateSubmitted - a.dateSubmitted);
 
     const currentEntries = sortedEntries.slice(
@@ -73,13 +128,12 @@ export default function MyEntries() {
         (currentPage + 1) * entriesPerPage
     );
 
-
     return (
         <div className="entries">
             <div className="entryBox">
                 <h1 className="myEntries">My Entries</h1>
                 <div className="usersInput">
-                    <form onSubmit={addEntry}>
+                    <form onSubmit={editingEntryId ? updateEntry : addEntry}>
                         <input
                             type="text"
                             name="subject"
@@ -104,7 +158,7 @@ export default function MyEntries() {
                         />
                         <div className="postBtns">
                             <button type="submit" className="submitBtn">
-                                Submit
+                                {editingEntryId ? "Update Entry" : "Submit"}
                             </button>
                         </div>
                     </form>
@@ -117,7 +171,6 @@ export default function MyEntries() {
                 </button>
             </div>
 
-            
             {showEntries && (
                 <div className="entriesList">
                     <h2>Your Journal Entries</h2>
@@ -127,6 +180,7 @@ export default function MyEntries() {
                                 <strong>{entry.subject}</strong> - {entry.mood}
                                 <p>{entry.entry}</p>
                                 <p><em>{new Date(entry.dateSubmitted).toLocaleString()}</em></p>
+                                <button onClick={() => editEntry(entry)}>Edit</button>
                             </div>
                         ))
                     ) : (
