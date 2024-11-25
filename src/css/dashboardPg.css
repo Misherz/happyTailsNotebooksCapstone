@@ -13,10 +13,12 @@
 }
 
 .midDashboard{
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     z-index: 1;
-    color: #62a17d;
-    padding: 0%;
+    color: #6aa59d;
+    padding-left: 5em;
     margin: 0;
 }
 

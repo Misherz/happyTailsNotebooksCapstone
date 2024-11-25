@@ -47,7 +47,7 @@ export default function Dashboard() {
         }
     }
 
-    function wodPopUp() {
+    function wordPopUp() {
         wordOfTheDay = window.open(
             "https://www.merriam-webster.com/word-of-the-day",
             "Word of the Day",
@@ -98,7 +98,7 @@ export default function Dashboard() {
                     <p>Loading...</p>
                 )}
                 <div className='infoButtons'>
-                    <button type='button' onClick={wodPopUp}>Get Word Of The Day</button>
+                    <button type='button' onClick={wordPopUp}>Get Word Of The Day</button>
 
                 </div>
             </div>

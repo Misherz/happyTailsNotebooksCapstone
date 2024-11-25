@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 //getting backend
  async function getEntries() {
     const apiUrl ='http://localhost:3000/journal/';
@@ -18,7 +17,6 @@ import axios from "axios";
     }
 }
 
-
 async function createEntry(formData) {
     
     try {
@@ -28,44 +26,34 @@ async function createEntry(formData) {
   
       return res.data;
     } catch (err) {
-      console.error(err);
+    //   console.error(err);
     }
   }
+
 
   async function deleteEntry(id) {
     try {
-      let url = `http://localhost:3000/api/produce/${id}`;
-  
-      let res = await axios.delete(url);
-  
-      return true;
+        let url = `http://localhost:3000/journal/${id}`;
+ 
+        let res = await axios.delete(url);
+
+        return true;
     } catch (err) {
-      console.error(err);
+        console.error(err);
+        return false;
     }
-  }
+}
 
-//   async function updateEntry(id, formData) {
-    
-//     try {
-//       let url = `http://localhost:3000/journal/${id}`;
 
-  
-//       let res = await axios.put(url, formData);
-  
-//       return res.data;
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   }
 async function updateEntry(id, updatedData) {
     try {
         let url = `http://localhost:3000/journal/${id}`;
-        let res = await axios.put(url, updatedData);
+        let res = await axios.patch(url, updatedData);
         console.log("Updated Entry:", res.data);
         return res.data;
     } catch (err) {
         console.error("Error updating entry:", err);
-        throw err;  // Make sure the error is propagated
+        throw err;  
     }
 }
 
@@ -81,7 +69,6 @@ async function updateEntry(id, updatedData) {
     }
   }
   
-
 
 
 export {

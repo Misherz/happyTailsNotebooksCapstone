@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getEntries, createEntry, updateEntry as updateEntryAPI, deleteEntry } from '../../utilities/controller.mjs';
+import { getEntries, createEntry, updateEntry as updateEntryAPI, deleteEntry as deleteEntryAPI} from '../../utilities/controller.mjs';
 
 export default function MyEntries() {
     const [formData, setFormData] = useState({
@@ -76,6 +76,20 @@ export default function MyEntries() {
         setEditingEntryId(entry.id);
     }
 
+
+
+    function deleteEntry(entry) {
+        console.log("Deleting entry with ID:", entry._id);
+        deleteEntryAPI(entry._id).then(() => {
+            setEntries(prevEntries => prevEntries.filter(ent => ent._id !== entry._id));
+            alert("Entry deleted successfully!");
+        }).catch(err => {
+            console.error("Failed to delete entry:", err);
+            alert("Error deleting entry.");
+        });
+    }
+    
+    
     // Update an entry
     function updateEntry(e) {
         e.preventDefault();
@@ -85,16 +99,14 @@ export default function MyEntries() {
             dateSubmitted: Date.now(),
         };
 
-        // Call the backend API to update the entry
         updateEntryAPI(editingEntryId, updatedEntry).then(() => {
-            // After successful backend update, update local state
+          
             setEntries(prevEntries =>
                 prevEntries.map(entry =>
                     entry.id === editingEntryId ? { ...entry, ...updatedEntry } : entry
                 )
             );
 
-            // Reset the form and stop editing
             setEditingEntryId(null);
             setFormData({
                 mood: '',
@@ -121,7 +133,9 @@ export default function MyEntries() {
         }
     }
 
-    const sortedEntries = [...entries].sort((a, b) => b.dateSubmitted - a.dateSubmitted);
+    //add new date to ensure it is a date object
+    const sortedEntries = [...entries].sort((a, b) => new Date(b.dateSubmitted) - new Date(a.dateSubmitted));
+
 
     const currentEntries = sortedEntries.slice(
         currentPage * entriesPerPage,
@@ -176,11 +190,12 @@ export default function MyEntries() {
                     <h2>Your Journal Entries</h2>
                     {currentEntries.length > 0 ? (
                         currentEntries.map(entry => (
-                            <div key={entry.id} className="entryCard">
+                            <div key={entry._id} className="entryCard">
                                 <strong>{entry.subject}</strong> - {entry.mood}
                                 <p>{entry.entry}</p>
                                 <p><em>{new Date(entry.dateSubmitted).toLocaleString()}</em></p>
                                 <button onClick={() => editEntry(entry)}>Edit</button>
+                                <button onClick={() => deleteEntry(entry)}>Delete</button>
                             </div>
                         ))
                     ) : (
