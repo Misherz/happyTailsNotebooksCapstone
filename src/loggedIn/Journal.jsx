@@ -7,7 +7,9 @@ import Footer from '../components/footer/Footer';
 import SystemTray from '../components/navBar/SystemTray';
 
 import React from 'react';
-
+import { useState, useEffect } from 'react';
+import { getPhotoData } from '../apis/photosData.mjs';
+import { getQuoteData } from '../apis/quotesData.mjs'
 import MyCalendar from '../components/calendar/Calendar';
 import MyEntries from '../components/calendar/JournalEntries';
 
