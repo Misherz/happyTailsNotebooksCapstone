@@ -67,8 +67,9 @@ export default function Dashboard() {
 
 
     return (
-        <div className='dashBoard'>
+        <div className='parent'>
             <BackgroundImg />
+            <div className='dashBoard'>
             <NavBar />
             <SystemTray />
             <div className='midDashboard'>
@@ -86,31 +87,36 @@ export default function Dashboard() {
 
                 {dailyPhotos ? (
                     <div className='photoBlock'>
-                        <h1 className='txt'>Photo of the Day</h1>
+                        <h1 className='headerTxt'>Photo of the Day</h1>
                         <img
                             src={dailyPhotos.download_url}
                             alt={`Image of the day by ${dailyPhotos.author}`}
                             className='imgDaily'
-                        />
+                        /><br />
                         <p className='txt'>{`Author: ${dailyPhotos.author}`}</p>
                     </div>
                 ) : (
                     <p>Loading...</p>
                 )}
                 <div className='infoButtons'>
-                    <button type='button' onClick={wordPopUp}>Get Word Of The Day</button>
+                    <button type='button' onClick={wordPopUp} className='wod'>Get Word Of The Day</button>
 
                 </div>
             </div>
 
 
             <div className='dashboardBtns'>
-                <button type='button' className='dashboardBtn'>JOURNAL</button>
-                <button type='button' className='dashboardBtn'>HABIT TRACKER</button><br />
-                <button type='button' className='dashboardBtn'>EVENTS</button>
-                <button type='button' className='dashboardBtn'>COMMUNITY</button>
+                <span className='section1'> 
+                    <button type='button' className='dashboardBtn'>JOURNAL</button>
+                    <button type='button' className='dashboardBtn'>HABIT TRACKER</button><br />
+                </span>
+                <span className='section2'> 
+                    <button type='button' className='dashboardBtn'>EVENTS</button>
+                    <button type='button' className='dashboardBtn'>COMMUNITY</button>
+                </span>
             </div>
             <Footer />
         </div >
+        </div>
     )
 }

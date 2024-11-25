@@ -43,3 +43,12 @@ textarea {
     padding: 1em;
     margin: auto;
 }
+
+.midContent {
+    display: flex;
+    flex-direction: row;
+}
+
+.calendarTest{
+    width: 20%;
+}

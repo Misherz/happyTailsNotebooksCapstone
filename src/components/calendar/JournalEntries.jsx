@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getEntries, createEntry, updateEntry as updateEntryAPI, deleteEntry as deleteEntryAPI} from '../../utilities/controller.mjs';
+import '../../css/myEntriesPg.css'
 
 export default function MyEntries() {
     const [formData, setFormData] = useState({
@@ -10,7 +11,7 @@ export default function MyEntries() {
 
     const [entries, setEntries] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
-    const [entriesPerPage] = useState(3);
+    const [entriesPerPage] = useState(2);
     const [showEntries, setShowEntries] = useState(false);
     const [editingEntryId, setEditingEntryId] = useState(null);
 
@@ -141,87 +142,93 @@ export default function MyEntries() {
         currentPage * entriesPerPage,
         (currentPage + 1) * entriesPerPage
     );
-
+    
     return (
         <div className="entries">
-            <div className="entryBox">
-                <h1 className="myEntries">My Entries</h1>
-                <div className="usersInput">
-                    <form onSubmit={editingEntryId ? updateEntry : addEntry}>
-                        <input
-                            type="text"
-                            name="subject"
-                            placeholder="Subject"
-                            value={formData.subject}
-                            onChange={handleChange}
-                        />
-                        <br />
-                        <input
-                            type="text"
-                            name="mood"
-                            placeholder="Mood"
-                            value={formData.mood}
-                            onChange={handleChange}
-                        />
-                        <br />
-                        <textarea
-                            name="entry"
-                            placeholder="Write at least 3-5 sentences of your daily entry"
-                            value={formData.entry}
-                            onChange={handleChange}
-                        />
-                        <div className="postBtns">
-                            <button type="submit" className="submitBtn">
-                                {editingEntryId ? "Update Entry" : "Submit"}
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div className="viewEntriesBtn">
-                <button onClick={() => setShowEntries(prev => !prev)} className="viewEntriesBtn">
-                    {showEntries ? "Hide Entries" : "View Entries"}
-                </button>
-            </div>
-
-            {showEntries && (
-                <div className="entriesList">
-                    <h2>Your Journal Entries</h2>
-                    {currentEntries.length > 0 ? (
-                        currentEntries.map(entry => (
-                            <div key={entry._id} className="entryCard">
-                                <strong>{entry.subject}</strong> - {entry.mood}
-                                <p>{entry.entry}</p>
-                                <p><em>{new Date(entry.dateSubmitted).toLocaleString()}</em></p>
-                                <button onClick={() => editEntry(entry)}>Edit</button>
-                                <button onClick={() => deleteEntry(entry)}>Delete</button>
+            <div className="entriesContainer">
+                <div className="entryBox">
+                    <h1 className="myEntries">My Entries</h1>
+                    <div className="usersInput">
+                        <form onSubmit={editingEntryId ? updateEntry : addEntry}>
+                            <input
+                                className="usersInput"
+                                type="text"
+                                name="subject"
+                                placeholder="Subject"
+                                value={formData.subject}
+                                onChange={handleChange}
+                            />
+                            <br />
+                            <input
+                                className="usersInput"
+                                type="text"
+                                name="mood"
+                                placeholder="Mood"
+                                value={formData.mood}
+                                onChange={handleChange}
+                            />
+                            <br />
+                            <textarea
+                                name="entry"
+                                placeholder="Write at least 3-5 sentences of your daily entry"
+                                value={formData.entry}
+                                onChange={handleChange}
+                            />
+                            <div className="postBtns">
+                                <button type="submit" className="submitBtn">
+                                    {editingEntryId ? "Update Entry" : "Submit"}
+                                </button>
                             </div>
-                        ))
-                    ) : (
-                        <p>No entries yet. Start journaling!</p>
-                    )}
-
-                    <div className="paginationBtns">
-                        <button
-                            type="button"
-                            className="prevBtn"
-                            onClick={prevPage}
-                            disabled={currentPage === 0}
-                        >
-                            ← Previous
-                        </button>
-                        <button
-                            type="button"
-                            className="nextBtn"
-                            onClick={nextPage}
-                            disabled={currentPage === Math.floor(entries.length / entriesPerPage)}
-                        >
-                            Next →
-                        </button>
+                        </form>
                     </div>
                 </div>
-            )}
+                <div className="entriesBlock">
+                    <div className="viewEntriesBtn">
+                        <button onClick={() => setShowEntries(prev => !prev)} className="viewEntriesBtn">
+                            {showEntries ? "Hide Entries" : "View Entries"}
+                        </button>
+                    </div>
+
+                    {showEntries && (
+                        <div className="entriesList">
+                            <h2 className="mainHeader">Your Journal Entries</h2>
+                            {currentEntries.length > 0 ? (
+                                currentEntries.map(entry => (
+                                    <div key={entry._id} className="entryCard">
+                                        <strong className="entrySubject">{entry.subject}</strong><br /> <strong className="entryMood">{entry.mood}</strong>
+                                        <p className="entryTxt">{entry.entry}</p>
+                                        <p className="date"><em>{new Date(entry.dateSubmitted).toLocaleString()}</em></p>
+                                        <button onClick={() => editEntry(entry)}className="changeBtn">Edit</button>
+                                        <button onClick={() => deleteEntry(entry)} className="changeBtn">Delete</button>
+                                    </div>
+                                ))
+                            ) : (
+                                <p>No entries yet. Start journaling!</p>
+                            )}
+
+
+                        <div className="paginationBtns">
+                            <button
+                                type="button"
+                                className="prevBtn"
+                                onClick={prevPage}
+                                disabled={currentPage === 0}
+                            >
+                                ← Previous
+                            </button>
+                            <button
+                                type="button"
+                                className="nextBtn"
+                                onClick={nextPage}
+                                disabled={currentPage === Math.floor(entries.length / entriesPerPage)}
+                            >
+                                Next →
+                            </button>
+                        </div>
+                    </div>
+                )}
+            </div>
+            </div>
         </div>
     );
 }

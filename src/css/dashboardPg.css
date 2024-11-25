@@ -1,5 +1,63 @@
+.dashboard{
+    display: flex;
+    justify-content: center;
+}
+
+.midDashboard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    z-index: 1;
+    color: #6aa59ddc;
+    padding-left: 5em;
+    padding-right: 5em;
+    margin: 0;
+    /* margin-bottom: 5em; */
+}
+
+
+/* .dashboardBtn{
+    margin: 2em;
+    padding: 1em;
+    background-color: rgb(158, 122, 135);
+    width: 12em;
+    height: 6em;
+    overflow: hidden;
+    bottom: 10em;
+} */
+
+/* quote of the day */
+.apis{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    background-color: #62a18fd7;
+    color: rgb(239, 223, 202);
+    border-radius: 1em;
+    width: 100em;
+    margin: 1em;
+}
+.quoteBlock{
+    font-size: 2em;
+}
+
+/* PhotoBlock */
+.photoBlock{
+    background-color: #b69691d3;
+    border-radius: 1em;
+    margin: 1em;
+}
+.headerTxt{
+    color: antiquewhite;
+    font-size: 3em;
+    
+}
+.txt{
+    color: antiquewhite;
+    font-size: 1em;
+}
 .imgDaily {
-    width: 15%;
+    width: 25%;
     z-index: 1;
     top: 2em;
     border-radius: 20em;
@@ -12,18 +70,20 @@
 
 }
 
-.midDashboard{
+/* Word of the day */
+.infoButtons{
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    z-index: 1;
-    color: #6aa59d;
-    padding-left: 5em;
-    margin: 0;
+    
+}
+.wod{
+    padding: 1em;
+    margin: 1em;
+    width: 10em;
 }
 
 
-
+/* Dashboard Buttons */
 .dashboardBtn{
     margin: 2em;
     padding: 1em;
@@ -34,6 +94,15 @@
     bottom: 10em;
 }
 
+.dashboardBtns{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 3em;
+    margin: 3em;
+}
+
 .dashboardBtn:hover{
     background-color: #62a17d;
 }
+

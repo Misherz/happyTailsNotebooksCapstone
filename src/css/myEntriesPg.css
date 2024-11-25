@@ -1,0 +1,92 @@
+@import url("https://use.typekit.net/oem5whj.css");
+
+.usersInput{
+  font-family: "journal", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.postBtns{
+  font-family: "journal", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.myEntries{
+  font-family: "above-the-sky-script", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 2.5em;
+  color: antiquewhite;
+  padding: 0;
+}
+.entriesContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  width: 100%;
+  max-width: 1200px;
+
+}
+
+.entriesBlock {
+  color: rgb(218, 246, 252);
+  font-family: "journal", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+
+}
+
+.entriesList {
+  background-color: #b38077ad;
+  border-radius: 1em;
+  padding: 1em;
+  width: 20em;
+
+}
+
+.entryTxt {
+  color: rgb(218, 246, 252);
+  font-size: 2em;
+  font-family: "sidenote-variable", sans-serif;
+  font-variation-settings: "slnt" 0, "wdth" 60, "wght" 200;
+}
+
+.mainHeader{
+  font-family: "above-the-sky-script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5em;
+  color: antiquewhite;
+  padding: 0;
+}
+.entrySubject {
+  color: #4f7980;
+  font-family: "journal", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2em;
+}
+.entryMood{
+  font-family: "journal", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #4f7980;
+}
+
+.changeBtn {
+  padding: 1em;
+  margin: 0.5em;
+}
+
+.paginationBtns {
+  padding: 1em;
+  margin: 0.5em;
+}
+.date{
+  font-family: "above-the-sky-script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5em;
+}
