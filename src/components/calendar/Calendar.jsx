@@ -12,7 +12,7 @@ export default function MyCalendar() {
     //Date based off useState
     const month = date.getMonth();
     const year = date.getFullYear();
-    const currentDay = date.getDay();
+    const currentDate = date.getDate();
 
 
     function getDaysMonth() {
@@ -24,7 +24,7 @@ export default function MyCalendar() {
         }
         return daysInMonth[month]
     }
-    
+
     function displayCurrentDay() {
         return week[day];
     }
@@ -62,20 +62,26 @@ export default function MyCalendar() {
     //setMonth is a date object from Date
     function nextMonthClick(event) {
         event.preventDefault();
-        //increment month/year
         let nextMonth = month + 1;
         let nextYear = year;
 
-        nextMonth > 11 ? (nextMonth = 0, nextYear += 1) : SetDate(new Date(nextYear, nextMonth, 1));
+        if (nextMonth > 11) {  //Next month after DEC will go to Jan
+            nextMonth = 0;  
+            nextYear += 1;  
+        }
+        SetDate(new Date(nextYear, nextMonth, 1));
     }
 
     function prevMonthClick(event) {
         event.preventDefault();
-        //increment month/year
         let prevMonth = month - 1;
         let prevYear = year;
-
-        prevMonth < 0 ? (prevMonth = 11, nextYear -= 1) : SetDate(new Date(prevYear, prevMonth, 1));
+    
+        if (prevMonth < 0) {  
+            prevMonth = 11;  // Go to DEC of prev year
+            prevYear -= 1; 
+        }
+        SetDate(new Date(prevYear, prevMonth, 1)); 
     }
 
     const calendarDays = getCalendar();
@@ -97,8 +103,9 @@ export default function MyCalendar() {
             </div>
             <div className="days">
                 {calendarDays.map((day, index) => (
-                    <div key={index} 
-                    className={`day ${day ? "" : "empty"} ${day === currentDay ? "current-day" : ""} `}>
+                    <div
+                        key={index}
+                        className={`day ${day ? "" : "empty"} ${day === currentDate ? "current-day" : ""} `}>
                         {day}
                     </div>
                 ))}

@@ -32,14 +32,18 @@ export default function Dashboard() {
     async function getQuote() {
         try {
             const quoteData = await getQuoteData();
-
-            let todaysDate = new Date().getDate() + 1;
-            const randomPhoto = quoteData[todaysDate % quoteData.length];
-
-            SetDailyQuotes(randomPhoto)
-
+            
+            if (quoteData && quoteData.length > 0) {
+                const quote = quoteData[0].quote;
+                const author = quoteData[0].author;
+    
+                SetDailyQuotes({ quote, author });
+            } else {
+                console.error("No quote data found");
+            }
+    
         } catch (err) {
-            console.error("Cannot get quote", err)
+            console.error("Cannot get quote", err);
         }
     }
 
@@ -72,7 +76,8 @@ export default function Dashboard() {
                     <h2>Quotes of the Day</h2>
                     {dailyQuote ? (
                         <div className='quoteBlock'>
-                            <p>{dailyQuote.q}</p>
+                            <p>{dailyQuote.quote}</p>
+                            <p><em>- {dailyQuote.author}</em></p>
                         </div>
                     ) : (
                         <p>Loading...</p>
