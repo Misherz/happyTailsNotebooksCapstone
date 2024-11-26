@@ -27,3 +27,28 @@
     top: 0;
     margin: 0;
 }
+
+.Text{
+    padding: 1em;
+}
+.headerDate{
+    padding: 0;
+    margin: 0;
+}
+h4{
+    padding: 0;
+    margin: 0;
+}
+.geoData{
+    font-size: 1em;
+}
+
+.data{
+    font-size: 0.8em;
+}
+
+.emoji{
+    font-size: 2em;
+    padding: 0;
+    margin: 0;
+}
