@@ -3,9 +3,9 @@
     color:  #4d343e;
     font-size: 3em;
     position: relative;
-    background-color: rgb(233, 188, 130);
+    background-color: rgba(233, 188, 130, 0.872);
     width: 100%;
-    border-radius: 2em;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     margin-left: 3em;

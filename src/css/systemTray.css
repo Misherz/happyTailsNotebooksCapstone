@@ -7,7 +7,7 @@
     position: fixed; 
     top: 0;
     right: 0;
-    height: 50vh;
+    height: 70vh;
     width: 20vh;
     color: rgb(251, 250, 192);
     background-color: #4f7980;
@@ -26,6 +26,7 @@
     text-shadow: 2px;
     top: 0;
     margin: 0;
+    font-size: 3em;
 }
 
 .Text{
@@ -49,6 +50,12 @@ h4{
 
 .emoji{
     font-size: 2em;
+    padding: 0;
+    margin: 0;
+}
+
+
+.foxImage{
     padding: 0;
     margin: 0;
 }

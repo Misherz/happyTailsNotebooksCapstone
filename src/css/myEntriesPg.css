@@ -27,7 +27,7 @@
   gap: 2em;
   width: 100%;
   max-width: 1200px;
-
+  height: auto;
 }
 
 .entriesBlock {
@@ -38,17 +38,38 @@
 
 }
 
-.entriesList {
+/* .entriesList {
   background-color: #b38077ad;
   border-radius: 1em;
   padding: 1em;
   width: 20em;
+} */
+.entriesList {
+  background-color: #b38077ad;
+  border-radius: 1em;
+  padding: 1em;
+  width: 30em;
+  margin: 0 auto;
+  overflow: hidden;
+}
 
+.entryCard {
+  background-color: #ffffff94;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: scroll; 
+}
+
+.entriesList.wide {
+  width: 50em; 
+  
 }
 
 .entryTxt {
-  color: rgb(218, 246, 252);
-  font-size: 2em;
+  color: rgb(4, 30, 36);
+  font-size: 1.5em;  /* Adjusted font size */
   font-family: "sidenote-variable", sans-serif;
   font-variation-settings: "slnt" 0, "wdth" 60, "wght" 200;
 }
@@ -67,12 +88,14 @@
   font-weight: 400;
   font-style: normal;
   font-size: 2em;
+  margin-bottom: 0.5em;
 }
-.entryMood{
+.entryMood {
   font-family: "journal", sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #4f7980;
+  margin-bottom: 0.5em;
 }
 
 .changeBtn {
@@ -99,9 +122,13 @@
 }
 .entryBox{
   background-color: #a2b9a9c7;
-  padding: 1.5em;
+  padding: 2em;
   border-radius: 1em;
-
+  width: 30em; 
+  min-height: 30em; 
+  max-height: 30em; 
+  overflow: hidden; 
+  margin-top: 5em;
 }
 
 input {
@@ -111,4 +138,8 @@ input {
   border-radius: 1em;
   color: #404842cd;
 
+}
+
+.viewEntriesBtn{
+  margin-top: 2.2em;
 }

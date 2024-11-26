@@ -88,7 +88,7 @@ function emojiWeather(temp, weatherId) {
                     </div>
                 )}
             </div>
-            <img src='../../../public/imgs/cuteFox.png' alt='fox image' />
+            <img className="foxImage" src='../../../public/imgs/cuteFox.png' alt='fox image' />
         </div>
     )
 }

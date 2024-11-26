@@ -23,6 +23,9 @@ export default function Dashboard() {
             <BackgroundImg />
             <NavBar />
             <SystemTray />
+            <Link to="/dashboard">
+                    <button type='button' className='dbrd'>Go to Dashboard</button>
+            </Link>
             <div className='midContent'>
                 <div className='calendarBox'>
                 <MyCalendar style={{ transform: `scale(${calendarSize})`, transformOrigin: 'top center' }} />
@@ -32,9 +35,7 @@ export default function Dashboard() {
                 </div>
 
             </div>
-            <Link to="/dashboard">
-                    <button type='button'>Go to Dashboard</button>
-            </Link>
+           
             <Footer />
         </div >
     )

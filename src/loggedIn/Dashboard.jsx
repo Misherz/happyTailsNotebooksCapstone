@@ -65,8 +65,6 @@ export default function Dashboard() {
         getQuote();
     }, []);
 
-
-
     return (
         <div className='parent'>
             <BackgroundImg />
