@@ -1,6 +1,11 @@
+@import url("https://use.typekit.net/oem5whj.css");
+
 .dashboard{
     display: flex;
     justify-content: center;
+    font-family: "journal", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .midDashboard{
@@ -80,29 +85,39 @@
     padding: 1em;
     margin: 1em;
     width: 10em;
+    background-color: #62a195ce;
 }
 
 
 /* Dashboard Buttons */
-.dashboardBtn{
-    margin: 2em;
-    padding: 1em;
-    background-color: rgb(158, 122, 135);
-    width: 12em;
-    height: 6em;
-    overflow: hidden;
-    bottom: 10em;
-}
-
 .dashboardBtns{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     padding: 3em;
-    margin: 3em;
+    margin: 4em;
+    margin-top: 0;
+    padding-left: 10em;
+     font-family: "journal", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.dashboardBtn{
+    margin: 2em;
+    padding: 1em;
+    width: 12em;
+    height: 6em;
+    overflow: hidden;
+    bottom: 10em;
+    
 }
 
 .dashboardBtn:hover{
-    background-color: #62a17d;
+    background-color: #62a18fd7;
 }
 
+button {
+    background-color: #b69691;
+}

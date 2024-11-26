@@ -12,6 +12,7 @@ import { getPhotoData } from '../apis/photosData.mjs';
 import { getQuoteData } from '../apis/quotesData.mjs'
 import MyCalendar from '../components/calendar/Calendar';
 import MyEntries from '../components/calendar/JournalEntries';
+import { Link } from 'react-router-dom';
 
 
 export default function Dashboard() {
@@ -29,7 +30,11 @@ export default function Dashboard() {
                 <div className='journaling'>
                 <MyEntries />
                 </div>
+
             </div>
+            <Link to="/dashboard">
+                    <button type='button'>Go to Dashboard</button>
+            </Link>
             <Footer />
         </div >
     )

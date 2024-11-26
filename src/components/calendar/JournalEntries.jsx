@@ -47,17 +47,16 @@ export default function MyEntries() {
             };
     
             createEntry(newEntry).then(createdEntry => {
-                setEntries(prevEntries => [
-                    { ...createdEntry, id: Date.now() },
-                    ...prevEntries,
-                ]);
-    
+                getEntries().then(response => {
+                    setEntries(response); 
+                });
+            
                 setFormData({
                     mood: '',
                     subject: '',
                     entry: '',
                 });
-    
+            
                 alert("Entry added!");
             }).catch(err => {
                 console.error("Failed to add entry:", err);
@@ -77,8 +76,7 @@ export default function MyEntries() {
         setEditingEntryId(entry._id);
     }
 
-
-
+    //delete entry
     function deleteEntry(entry) {
         console.log("Deleting entry with ID:", entry._id);
         deleteEntryAPI(entry._id).then(() => {
@@ -102,11 +100,9 @@ export default function MyEntries() {
 
         updateEntryAPI(editingEntryId, updatedEntry).then(() => {
           
-            setEntries(prevEntries =>
-                prevEntries.map(entry =>
-                    entry.id === editingEntryId ? { ...entry, ...updatedEntry } : entry
-                )
-            );
+            getEntries().then(response => {
+                setEntries(response); // Update state with the new entries
+            });
 
             setEditingEntryId(null);
             setFormData({
@@ -121,7 +117,7 @@ export default function MyEntries() {
         });
     }
 
-    // Pagination
+    //Pagination
     function nextPage() {
         if ((currentPage + 1) * entriesPerPage < entries.length) {
             setCurrentPage(currentPage + 1);

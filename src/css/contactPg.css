@@ -14,7 +14,10 @@
     align-items: flex-start;
     z-index: 1;
     padding: 2em 4em 2em 10em;
-    color:  #4d343e;
+    color:  antiquewhite;
+    font-family: "journal", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .contactTxt{
@@ -22,7 +25,7 @@
     max-width: 50%;
     padding: 0.5em;
     margin: 0;
-    background-color: #CBD2A4;
+    background-color: #b69691d5;
     border-radius: 2em;
     border:groove 0.5em #b69691;    
 }
@@ -33,8 +36,9 @@
 
 }
 
-.contactP {
+.ContactP {
     padding: 0 1.5em 0 1.5em;
+    font-size: 1em;
 
 }
 

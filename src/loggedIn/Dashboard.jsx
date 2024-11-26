@@ -9,6 +9,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { getPhotoData } from '../apis/photosData.mjs';
 import { getQuoteData } from '../apis/quotesData.mjs'
+import { Link } from 'react-router-dom';
 
 
 export default function Dashboard() {
@@ -74,7 +75,7 @@ export default function Dashboard() {
             <SystemTray />
             <div className='midDashboard'>
                 <div className='apis'>
-                    <h2>Quotes of the Day</h2>
+                    <h2>Ponderin' Quotes</h2>
                     {dailyQuote ? (
                         <div className='quoteBlock'>
                             <p>{dailyQuote.quote}</p>
@@ -106,8 +107,10 @@ export default function Dashboard() {
 
 
             <div className='dashboardBtns'>
-                <span className='section1'> 
-                    <button type='button' className='dashboardBtn'>JOURNAL</button>
+                <span className='section1'>
+                    <Link to="/journal">
+                        <button type='button' className='dashboardBtn'>JOURNAL</button>
+                    </Link>
                     <button type='button' className='dashboardBtn'>HABIT TRACKER</button><br />
                 </span>
                 <span className='section2'> 

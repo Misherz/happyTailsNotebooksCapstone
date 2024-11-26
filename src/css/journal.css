@@ -1,11 +1,11 @@
 .journaling {
     display: flex;
-    flex-direction: column; /* Use column direction if the content is stacked vertically */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
     margin-bottom: 3em;
     color: rgb(243, 223, 223);
-    width: 100%; /* Ensure it takes full width for centering */
+    width: 100%; 
 }
 
 
@@ -27,9 +27,9 @@ textarea {
 
 .midContent {
     display: flex;
-    justify-content: center; /* Centers child items horizontally */
-    align-items: center;     /* Centers child items vertically */
-    gap: 2em; /* Adds spacing between items */
+    justify-content: center;
+    align-items: center;    
+    gap: 2em; 
 }
 
 

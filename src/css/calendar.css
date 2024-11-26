@@ -4,7 +4,7 @@
 /* Regular styles */
 .parentContainer {
     max-width: 100%;
-    overflow: hidden;  /* Ensure no overflow outside the container */
+    overflow: hidden; 
 }
 
 .calendar {

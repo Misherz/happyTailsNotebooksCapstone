@@ -19,7 +19,7 @@
   right: 0;
   margin: 2em;
   z-index: 1;
-  color: #6F4C5B;
+  color: #6f4c5bd3;
 
 }
 
@@ -31,7 +31,7 @@
     max-width: 100%;
     padding: 0.5em; 
     margin: 1em;
-    background-color: #CBD2A4;
+    background-color: #62a18fd7;
     border-radius: 2em;
     height: 25em;
     border:groove 0.5em #b69691;       
@@ -55,7 +55,7 @@
     max-width: 20%;
     padding: 0.5em;
     margin: 1em;
-    background-color: #b69691;
+    background-color: #b69691df;
     border-radius: 2em;
     height: 25em;
     border: ridge 0.5em #CBD2A4;
