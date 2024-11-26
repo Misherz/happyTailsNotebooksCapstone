@@ -6,10 +6,10 @@ import '../../../public/imgs/pencil.png'
 import { useState } from 'react'
 
 export default function LoginPage() {
-    const [isNew, setIsNew] =useState(false);
-    
-    //Toggle between sign up and login
-    function onClick(isNew){
+    const [isNew, setIsNew] = useState(false);
+
+    // Toggle between sign up and login
+    function onClick() {
         setIsNew(prev => !prev);
     }
 
@@ -21,19 +21,23 @@ export default function LoginPage() {
                 <div className='Login'>
                     <div className='loginBox'>
                         <h1 className='bxTitle'>Login</h1>
-                        <input type='text' className='input' placeholder='Username'></input
-                        ><br />
-                        <input type='text' className='input' placeholder='Password'></input> 
+                        <input type='text' className='input' placeholder='Username' />
+                        <br />
+                        <input type='text' className='input' placeholder='Password' />
                         <br />
                         <button className="submitBtn" type='button'>Submit</button>
                         <br />
+                        <p className='soul'>Writing heals the soul...</p>
+
+                        {/* Centered pencil image */}
                         <img className="pencil" src='../../../public/imgs/pencil.png' alt='pencil icon' />
-                        
+                        <br />
                         <button className='submitBtn' onClick={onClick}>
                             {isNew ? "Back to Login" : "New? Sign Up!"}
                         </button>
-                     </div>              
+                    </div>              
                 </div>
+
                 {isNew && (
                     <div className='signUp'>
                         <div className='signUpBox'>
