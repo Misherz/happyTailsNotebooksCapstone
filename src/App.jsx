@@ -10,6 +10,7 @@ import LoginPage from './pages/homePage/Login'
 import Dashboard from './loggedIn/Dashboard'
 import Footer from './components/footer/Footer'
 import Journal from './loggedIn/Journal'
+import PageNotFound from './pages/404Pg'
 
 import { getPhotoData } from './apis/photosData.mjs'
 //cannot put jsx components in Router
@@ -25,6 +26,7 @@ function App() {
             <Route path="/login" element={<LoginPage />}/>
             <Route path="/dashboard" element={<Dashboard />}/>
             <Route path="/journal" element={<Journal />}/>
+            <Route path="/*" element={<PageNotFound />}/>
         </Routes>
         <Footer />
     </>
