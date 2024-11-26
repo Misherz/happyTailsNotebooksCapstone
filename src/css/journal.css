@@ -1,11 +1,12 @@
+
 .journaling {
     display: flex;
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
     margin-bottom: 3em;
-    /* Prevent the journaling section from changing size */
-    height: 100%
+    height: 100%;
+
 }
 .midContent {
     display: flex;
