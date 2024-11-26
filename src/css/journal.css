@@ -1,32 +1,13 @@
 .journaling {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column; /* Use column direction if the content is stacked vertically */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
     margin-bottom: 3em;
-    color: rgb(243, 223, 223) ;
-}
-.entries{
-    font-family:sans-serif;
-    padding: 2em;
-    margin: 1em;
-    flex: 1 1 45%; 
-    min-width: 250px; 
-}
-.entryBox{
-    background-color: #a2b9a9cd;
-    padding: 1.5em;
-    border-radius: 1em;
-
+    color: rgb(243, 223, 223);
+    width: 100%; /* Ensure it takes full width for centering */
 }
 
-input {
-    background-color: antiquewhite;  
-    display: flex;
-    border: 0.2em solid #8b9e90cd;
-    border-radius: 1em;
-    color: #404842cd;
-
-}
 
 textarea {
     height: 15em;
@@ -46,9 +27,9 @@ textarea {
 
 .midContent {
     display: flex;
-    flex-direction: row;
+    justify-content: center; /* Centers child items horizontally */
+    align-items: center;     /* Centers child items vertically */
+    gap: 2em; /* Adds spacing between items */
 }
 
-.calendarTest{
-    width: 20%;
-}
+

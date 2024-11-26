@@ -88,28 +88,29 @@ export default function MyCalendar() {
 
 
     return (
-        
-        <div className="calendar">
-            <div className="header">
-                <button type="button" onClick={prevMonthClick}>«</button>
-                <div className="monthYear">
-                    <h1>{displayCurrentMonth()} {year}</h1>
-                </div>
-                <button onClick={nextMonthClick}>»</button>
-            </div>
-            <div className="weekdays">
-                {week.map((day, index) => (
-                    <div key={index} className="weekday">{day}</div>
-                ))}
-            </div>
-            <div className="days">
-                {calendarDays.map((day, index) => (
-                    <div
-                        key={index}
-                        className={`day ${day ? "" : "empty"} ${day === currentDate ? "current-day" : ""} `}>
-                        {day}
+        <div className="parentContainer"> 
+            <div className="calendar">
+                <div className="header">
+                    <button type="button" onClick={prevMonthClick} className="mnthBtns">«</button>
+                    <div className="monthYear">
+                        <h1>{displayCurrentMonth()} {year}</h1>
                     </div>
-                ))}
+                    <button onClick={nextMonthClick} className="mnthBtns">»</button>
+                </div>
+                <div className="weekdays">
+                    {week.map((day, index) => (
+                        <div key={index} className="weekday">{day}</div>
+                    ))}
+                </div>
+                <div className="days">
+                    {calendarDays.map((day, index) => (
+                        <div
+                            key={index}
+                            className={`day ${day ? "" : "empty"} ${day === currentDate ? "current-day" : ""} `}>
+                            {day}
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )

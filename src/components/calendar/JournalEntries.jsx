@@ -74,7 +74,7 @@ export default function MyEntries() {
             subject: entry.subject,
             entry: entry.entry,
         });
-        setEditingEntryId(entry.id);
+        setEditingEntryId(entry._id);
     }
 
 

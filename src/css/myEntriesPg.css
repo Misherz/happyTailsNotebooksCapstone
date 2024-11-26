@@ -90,3 +90,25 @@
   font-style: normal;
   font-size: 1.5em;
 }
+.entries{
+  font-family:sans-serif;
+  padding: 2em;
+  margin: 1em;
+  flex: 1 1 45%; 
+  min-width: 250px; 
+}
+.entryBox{
+  background-color: #a2b9a9c7;
+  padding: 1.5em;
+  border-radius: 1em;
+
+}
+
+input {
+  background-color: antiquewhite;  
+  display: flex;
+  border: 0.2em solid #8b9e90cd;
+  border-radius: 1em;
+  color: #404842cd;
+
+}

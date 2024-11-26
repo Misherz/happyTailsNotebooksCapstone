@@ -1,4 +1,4 @@
-import '../css/dashboardPg.css'
+// import '../css/dashboardPg.css'
 import '../css/journal.css'
 
 import NavBar from '../components/navBar/NavBar'
@@ -15,7 +15,7 @@ import MyEntries from '../components/calendar/JournalEntries';
 
 
 export default function Dashboard() {
-
+    const calendarSize = 0.4;
 
     return (
         <div className='dashBoard'>
@@ -24,7 +24,7 @@ export default function Dashboard() {
             <SystemTray />
             <div className='midContent'>
                 <div className='calendarBox'>
-                    <MyCalendar />
+                <MyCalendar style={{ transform: `scale(${calendarSize})`, transformOrigin: 'top center' }} />
                 </div>
                 <div className='journaling'>
                 <MyEntries />
