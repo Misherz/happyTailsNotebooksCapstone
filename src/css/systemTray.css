@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/oem5whj.css");
+
 .sysTray{
     display: flex;
     flex-direction: column;
@@ -14,6 +16,9 @@
     margin: 0;
     box-sizing: border-box;
     z-index: 1;
+    font-family: "journal", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .bookmarkHole{
