@@ -9,7 +9,7 @@ export default function PageNotFound() {
     return (
         <div>
         <BackgroundImg />
-        <h1>404</h1>
+        <h1 className="pgNFH">404</h1>
         <p className="pTxt">Page Not Found</p>
         <img className="fox" src="../../public/imgs/pgnotfound.png" alt="Fox Pic" />
         <NavBar />
